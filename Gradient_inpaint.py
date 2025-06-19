@@ -40,7 +40,7 @@ def gradient_inpaint_2(img):
 
 
 
-file = "ouluInpaint .npy"
+file = "myInpaint .npy" #<--- Your file here 
 img = np.load(file).astype(np.float32)
 
 
