@@ -61,7 +61,7 @@ def wavelet_reconstruct(coeffs, wavelet='haar'):
     
     
 
-img = io.imread('Test_img_1.jpg')
+img = io.imread('Test_img_1.jpg') #<--- Your file here
 img = np.array(img)
 
 #Monochromatic and normalization
@@ -77,16 +77,6 @@ reconstructed_img = dct_rec(thr_img)
 print(relative_error(gray_img_norm, reconstructed_img))
 
 
-"""
-#Wav and REC with threshold
-coeffs = wavelet_transform(gray_img_norm)
-reconstructed_img = wavelet_reconstruct(coeffs)
-reconstructed_img = (reconstructed_img - np.min(reconstructed_img)) / (np.max(reconstructed_img) - np.min(reconstructed_img))
-print(relative_error(gray_img_norm, reconstructed_img))
-"""
-
-
-
 plt.subplot(121)
 plt.imshow(gray_img_norm, cmap='gray')
 plt.title('Original Image')
@@ -96,70 +86,6 @@ plt.imshow(reconstructed_img, cmap='gray')
 plt.title('Reconstructed Image')
 plt.axis('off')
 plt.show()
-
-
-
-
-"""
-#Image_1
-x1 = [48108, 1630694, 1851896, 1985177, 2036211, 2069372, 2089488, 2101343, 2109321, 2114394, 2117871]
-y1 = [1.5650302287666684e-14, 0.000279052804816305, 0.002125053010609617, 0.005137181267500088,
-      0.007437286043084238, 0.009865066270571434, 0.012080120106224229, 0.013900539432241635,
-      0.015530604951591778, 0.016862500744105467, 0.018006048189518294]
-
-
-x2 = [224264, 1291071, 1460429, 1536542, 1574939, 1598416, 1615527, 1631232, 1647898, 1664895, 1681679]
-y2 = [8.93528925455567e-15, 0.0007252866072432973, 0.0025916428148622358, 0.0055414312889165126,
-      0.00800003105509178, 0.010381423382459646, 0.012141062219937946, 0.013346878016111285,
-      0.014088250681209467, 0.018853812626321412, 0.024763511577078554]
-
-plt.plot(x1, y1, label='DCT')
-plt.plot(x2, y2, label='Wavelet (haar)')
-
-plt.xlabel('Num zero-coeffs')
-plt.ylabel('Relative error')
-plt.title('High-detailed image')
-plt.legend()
-
-
-plt.show()
-
-
-
-#Iage_2
-x1 = [12236, 271589, 280365, 285370, 288596, 290950, 292687, 294186, 295361, 296329, 297123]
-y1 = [1.480297363932996e-14, 5.8249816354283514e-05, 0.0003736502102939336, 0.0008538310456855713,
-      0.0014832061696280982, 0.002249643871688703, 0.0030901651985875004, 0.0040889049403465775,
-      0.005139963525260463, 0.00625614025701158, 0.007398458854805071]
-
-x2 = [59412, 210861, 217229, 220877, 224107, 226239, 228839, 230982, 232859, 234218, 235410]
-y2 = [5.899386658653637e-15, 0.0005546888897045021, 0.002116411220633687, 0.004983491398896155,
-      0.009149989614870535, 0.01216223156190756, 0.017495644662397607, 0.004719973639568084,
-      0.006379201924135618, 0.007939645400593642, 0.009642020087903342]
-
-plt.plot(x1, y1, label='DCT')
-plt.plot(x2, y2, label='Wavelet (haar)')
-
-plt.xlabel('Num zero-coeffs')
-plt.ylabel('Relative error')
-plt.title('Simple image')
-plt.legend()
-
-plt.show()
-"""
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
