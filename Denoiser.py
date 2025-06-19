@@ -1,3 +1,12 @@
+"""
+WORK IN PROGRESS....
+
+TODO:
+1. Wavelet
+2. Linear diffusion
+3. Parona-Malik
+"""
+
 from PIL import Image, ImageFilter
 import numpy as np
 import pywt
